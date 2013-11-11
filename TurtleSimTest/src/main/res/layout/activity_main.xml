@@ -1,0 +1,81 @@
+<GridLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Defending Fleet"
+        android:id="@+id/defendingFleetTextView"
+        android:layout_row="1"
+        android:layout_column="0" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Results"
+        android:id="@+id/resultsTitleTextView"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="fill_horizontal"
+        android:enabled="true"
+        android:focusable="false"
+        android:textColor="#00a8ff" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/defendingFleetEditText"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:autoText="true"
+        android:layout_gravity="fill_horizontal" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="348dp"
+        android:id="@+id/scrollView"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_columnSpan="2" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/resultsTextView"
+            android:text="Lorem ipsum dolor sit amet, mundi aliquam sed ne. Mei et epicurei intellegat, ad mei diam iuvaret quaestio. Ea eius sensibus cum, ne mei dico recusabo corrumpit, esse possim fabellas eos in. Nihil graece ut vix, ius suscipit constituto reprehendunt et. Sea ea melius eligendi, no illum tibique est.  Ne sit dolore essent veritus. Vidit viderer persequeris sit ei, mea novum sanctus ut. Te copiosae evertitur temporibus nam, an nusquam molestiae nec. Ut ancillae adversarium instructior vel, mel id novum utinam nonumy, ex vis utinam habemus recusabo. Per saepe oratio dicunt eu, ut euismod consulatu cum, eum no veniam essent urbanitas.  Ut dicit inimicus nec, nibh wisi vel ad. Sed ad munere reprimique, vis laudem ubique dissentias ea, nonumy nusquam ius ei. Alia percipitur theophrastus his at, no duo dolorem voluptatum. His cu natum delicata voluptaria. At vel everti utroque quaestio, qui ad essent utamur nostrud. Ad alterum prodesset pro, te summo disputando nec.  Vide dicunt mandamus sea eu. Eos dicta dolorem at. Qui nostro debitis ex, suas labitur tacimates eu ius. Te duo dicam ancillae fabellas, utamur accusamus cu usu. Quaeque copiosae te nec, an eos labitur reprimique reprehendunt.  Delicata molestiae ne his, ei sit brute deterruisset. Duis eruditi luptatum ex mel. Ea est integre consulatu rationibus, eu summo tacimates ius. Mea tritani delicata te. Pri liber efficiendi accommodare an, ut timeam oportere his, soleat apeirian no duo. Eruditi fierent id mei."
+            android:gravity="fill_vertical"
+            android:focusable="false" />
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Simulate"
+        android:id="@+id/simulateButton"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:layout_columnSpan="2"
+        android:layout_gravity="fill" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attacking Fleet"
+        android:id="@+id/attackingFleetTextView"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/attackingFleetEditText"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:autoText="true"
+        android:layout_gravity="fill_horizontal" />
+</GridLayout>
