@@ -10,6 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.prodning.turtlesim.kernel.test.gui.FleetCombatTestGUI;
 
 public class MainActivity extends Activity {
 
@@ -19,9 +23,14 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
+            final Button simulateButton = (Button) findViewById(R.id.simulateButton);
+
+            simulateButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
+                }
+            });
         }
     }
 

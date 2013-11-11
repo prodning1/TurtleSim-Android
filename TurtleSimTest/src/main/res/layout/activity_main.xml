@@ -37,7 +37,7 @@
 
     <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="348dp"
+        android:layout_height="300dp"
         android:id="@+id/scrollView"
         android:layout_row="3"
         android:layout_column="0"
@@ -47,8 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/resultsTextView"
-            android:text="Lorem ipsum dolor sit amet, mundi aliquam sed ne. Mei et epicurei intellegat, ad mei diam iuvaret quaestio. Ea eius sensibus cum, ne mei dico recusabo corrumpit, esse possim fabellas eos in. Nihil graece ut vix, ius suscipit constituto reprehendunt et. Sea ea melius eligendi, no illum tibique est.  Ne sit dolore essent veritus. Vidit viderer persequeris sit ei, mea novum sanctus ut. Te copiosae evertitur temporibus nam, an nusquam molestiae nec. Ut ancillae adversarium instructior vel, mel id novum utinam nonumy, ex vis utinam habemus recusabo. Per saepe oratio dicunt eu, ut euismod consulatu cum, eum no veniam essent urbanitas.  Ut dicit inimicus nec, nibh wisi vel ad. Sed ad munere reprimique, vis laudem ubique dissentias ea, nonumy nusquam ius ei. Alia percipitur theophrastus his at, no duo dolorem voluptatum. His cu natum delicata voluptaria. At vel everti utroque quaestio, qui ad essent utamur nostrud. Ad alterum prodesset pro, te summo disputando nec.  Vide dicunt mandamus sea eu. Eos dicta dolorem at. Qui nostro debitis ex, suas labitur tacimates eu ius. Te duo dicam ancillae fabellas, utamur accusamus cu usu. Quaeque copiosae te nec, an eos labitur reprimique reprehendunt.  Delicata molestiae ne his, ei sit brute deterruisset. Duis eruditi luptatum ex mel. Ea est integre consulatu rationibus, eu summo tacimates ius. Mea tritani delicata te. Pri liber efficiendi accommodare an, ut timeam oportere his, soleat apeirian no duo. Eruditi fierent id mei."
-            android:gravity="fill_vertical"
+            android:text="[results will go here]"
             android:focusable="false" />
     </ScrollView>
 
