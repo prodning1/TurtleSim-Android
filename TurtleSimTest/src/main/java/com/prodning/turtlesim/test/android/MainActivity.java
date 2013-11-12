@@ -12,7 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.prodning.turtlesim.kernel.parse.EntityFileParser;
 import com.prodning.turtlesim.kernel.test.gui.FleetCombatTestGUI;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 public class MainActivity extends Activity {
 
@@ -22,6 +29,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
+            File fleetFile = resToFile(R.raw.fleets, "fleets.xml");
+            File entitiesFile = resToFile(R.raw.entities, "entities.xml");
+
+            try {
+                EntityFileParser.setFleetFile(fleetFile);
+                EntityFileParser.setEntitiesFile(entitiesFile);
+            } catch (Exception e) {
+                final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
+                String resultString = e.getMessage();
+                resultsTextView.setText(resultString.toCharArray(), 0, resultString.length());
+            }
+
             final Button simulateButton = (Button) findViewById(R.id.simulateButton);
 
             simulateButton.setOnClickListener(new View.OnClickListener() {
@@ -83,4 +102,25 @@ public class MainActivity extends Activity {
         }
     }
 
+    private File resToFile(int resourceID, String filename) {
+        File file = getApplicationContext().getFileStreamPath(filename);
+        if(file.exists()) {
+            return file;
+        }
+
+        InputStream is;
+        FileOutputStream fos;
+        try {
+            is = getResources().openRawResource(resourceID);
+            byte[] buffer = new byte[is.available()];
+            is.read(buffer);
+            fos = openFileOutput(filename, MODE_PRIVATE);
+            fos.write(buffer);
+            fos.close();
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return file;
+    }
 }
