@@ -1,3 +1,6 @@
 [submodule "TurtleSimTest/src/main/java/com/prodning/turtlesim/kernel"]
 	path = TurtleSimTest/src/main/java/com/prodning/turtlesim/kernel
 	url = https://github.com/prodning1/TurtleSim-Kernel.git
+[submodule "TurtleSimTest/src/main/res/raw/xml"]
+	path = TurtleSimTest/src/main/res/raw/xml
+	url = https://github.com/prodning1/TurtleSim-Resources.git
