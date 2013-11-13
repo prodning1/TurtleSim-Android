@@ -40,31 +40,25 @@ public class MainActivity extends Activity {
                 String resultString = e.getMessage();
                 resultsTextView.setText(resultString.toCharArray(), 0, resultString.length());
             }
-
-            final Button simulateButton = (Button) findViewById(R.id.simulateButton);
-
-            simulateButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
-
-                    String flt1 = ((EditText) findViewById(R.id.attackingFleetEditText)).getText().toString();
-                    String flt2 = ((EditText) findViewById(R.id.defendingFleetEditText)).getText().toString();
-
-                    String resultString = "[error in simulation]";
-
-                    try {
-                        resultString = FleetCombatTestGUI.getResults(flt1, flt2);
-                    } catch (Exception e) {
-                        resultString = e.getMessage();
-                    }
-
-                    resultsTextView.setText(resultString.toCharArray(), 0, resultString.length());
-                }
-            });
         }
     }
 
+    private void simulateButtonOnClick(View view) {
+        final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
+
+        String flt1 = ((EditText) findViewById(R.id.attackingFleetEditText)).getText().toString();
+        String flt2 = ((EditText) findViewById(R.id.defendingFleetEditText)).getText().toString();
+
+        String resultString = "[error in simulation]";
+
+        try {
+            resultString = FleetCombatTestGUI.getResults(flt1, flt2);
+        } catch (Exception e) {
+            resultString = e.getMessage();
+        }
+
+        resultsTextView.setText(resultString.toCharArray(), 0, resultString.length());
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
