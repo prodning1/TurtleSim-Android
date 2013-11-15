@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
         }
     }
 
-    private void simulateButtonOnClick(View view) {
+    public void simulateButtonOnClick(View view) {
         final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
 
         String flt1 = ((EditText) findViewById(R.id.attackingFleetEditText)).getText().toString();
