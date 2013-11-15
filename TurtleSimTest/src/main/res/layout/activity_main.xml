@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:text="Defending Fleet"
         android:id="@+id/defendingFleetTextView"
-        android:layout_row="2"
+        android:layout_row="3"
         android:layout_column="0" />
 
     <TextView
@@ -17,7 +17,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Results"
         android:id="@+id/resultsTitleTextView"
-        android:layout_row="3"
+        android:layout_row="4"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:layout_marginTop="15dp"
@@ -30,26 +30,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/defendingFleetEditText"
-        android:layout_row="2"
+        android:layout_row="3"
         android:layout_column="1"
         android:autoText="true"
         android:layout_gravity="fill_horizontal" />
 
-    <ScrollView
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:id="@+id/scrollView"
-        android:layout_row="4"
+        android:layout_height="wrap_content"
+        android:id="@+id/resultsTextView"
+        android:text="[results will go here]"
+        android:focusable="false"
         android:layout_column="0"
-        android:layout_columnSpan="2" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/resultsTextView"
-            android:text="[results will go here]"
-            android:focusable="false" />
-    </ScrollView>
+        android:layout_columnSpan="2"
+        android:layout_row="5" />
 
     <Button
         android:layout_width="wrap_content"
@@ -60,22 +54,33 @@
         android:layout_row="0"
         android:layout_column="0"
         android:layout_columnSpan="2"
-        android:layout_gravity="fill" />
+        android:layout_gravity="fill_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attacking Fleet"
         android:id="@+id/attackingFleetTextView"
-        android:layout_row="1"
+        android:layout_row="2"
         android:layout_column="0" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/attackingFleetEditText"
-        android:layout_row="1"
+        android:layout_row="2"
         android:layout_column="1"
         android:autoText="true"
         android:layout_gravity="fill_horizontal" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_gravity="fill_horizontal"
+        android:layout_columnSpan="2" />
+
 </GridLayout>

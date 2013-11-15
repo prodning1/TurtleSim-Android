@@ -1,25 +1,21 @@
-package com.prodning.turtlesim.test.android;
+package com.prodning.turtlesim.android.activity;
 
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.prodning.turtlesim.kernel.parse.EntityFileParser;
 import com.prodning.turtlesim.kernel.test.gui.FleetCombatTestGUI;
+import com.prodning.turtlesim.test.android.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 public class MainActivity extends Activity {
 
@@ -80,21 +76,21 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
-    public static class PlaceholderFragment extends Fragment {
-
-        public PlaceholderFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            return rootView;
-        }
-    }
+//    /**
+//     * A placeholder fragment containing a simple view.
+//     */
+//    public static class PlaceholderFragment extends Fragment {
+//
+//        public PlaceholderFragment() {
+//        }
+//
+//        @Override
+//        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                Bundle savedInstanceState) {
+//            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+//            return rootView;
+//        }
+//    }
 
     private File resToFile(int resourceID, String filename) {
         File file = getApplicationContext().getFileStreamPath(filename);
@@ -115,6 +111,7 @@ public class MainActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return file;
     }
 }
