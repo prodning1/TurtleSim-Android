@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Ratios:"
+        android:id="@+id/ratio_header"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edit_metal"
+        android:layout_row="0"
+        android:layout_column="1" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edit_crystal"
+        android:layout_row="0"
+        android:layout_column="2" />
+
+    <EditText
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/edit_deuterium"
+        android:layout_row="0"
+        android:layout_column="3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Metal"
+        android:id="@+id/trade_metal"
+        android:layout_row="1"
+        android:layout_column="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Crystal"
+        android:id="@+id/trade_crystal"
+        android:layout_row="1"
+        android:layout_column="2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Deuterium"
+        android:id="@+id/trade_deuterium"
+        android:layout_row="1"
+        android:layout_column="3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/io_metal"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_gravity="top"
+        android:layout_columnSpan="3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/io_crystal"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_gravity="top"
+        android:layout_columnSpan="3" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/io_deuterium"
+        android:layout_row="4"
+        android:layout_column="1"
+        android:layout_gravity="top"
+        android:layout_columnSpan="3" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/button_metal_calc"
+        android:layout_row="2"
+        android:layout_column="4"
+        android:layout_gravity="top" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/button_crystal_calc"
+        android:layout_row="3"
+        android:layout_column="4"
+        android:layout_gravity="top" />
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/button_deuterium_calc"
+        android:layout_row="4"
+        android:layout_column="4"
+        android:layout_gravity="top" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="I/O:"
+        android:id="@+id/textview_io"
+        android:layout_row="2"
+        android:layout_column="0" />
+
+</GridLayout>
