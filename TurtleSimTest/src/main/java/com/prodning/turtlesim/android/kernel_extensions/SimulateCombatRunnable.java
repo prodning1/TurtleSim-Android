@@ -26,22 +26,22 @@ public class SimulateCombatRunnable implements Runnable {
     public void run() {
         SimulationResult result = new SimulationResult();
 
-        MainActivity.this.runOnUiThread(new Runnable() {
+//        MainActivity.this.runOnUiThread(new Runnable() {
+//
+//        });
 
-        });
-
-        for(int i = 0; i < numberOfSimulations; i++) {
-            ArrayList<FleetCombatUnit> newFleetCombatUnits = new ArrayList<FleetCombatUnit>();
-
-            for(FleetCombatUnit fcu : fleetCombatUnits) {
-                newFleetCombatUnits.add(fcu.deepClone());
-            }
-
-            pb.setProgress(i);
-
-            MacroCombatResult mcr = CombatSimulation.fleetCombat(newFleetCombatUnits);
-
-            result.addCombatResult(mcr);
-        }
+//        for(int i = 0; i < numberOfSimulations; i++) {
+//            ArrayList<FleetCombatUnit> newFleetCombatUnits = new ArrayList<FleetCombatUnit>();
+//
+//            for(FleetCombatUnit fcu : fleetCombatUnits) {
+//                newFleetCombatUnits.add(fcu.deepClone());
+//            }
+//
+//            pb.setProgress(i);
+//
+//            MacroCombatResult mcr = CombatSimulation.fleetCombat(newFleetCombatUnits);
+//
+//            result.addCombatResult(mcr);
+//        }
     }
 }

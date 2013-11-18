@@ -15,6 +15,6 @@ import java.util.List;
  */
 public class AndroidCombatSimulation {
     public static SimulationResult SimulateFleetCombat(ProgressBar pb, List<FleetCombatUnit> fleetCombatUnits, int numberOfSimulations) {
-
+        return null;
     }
 }
