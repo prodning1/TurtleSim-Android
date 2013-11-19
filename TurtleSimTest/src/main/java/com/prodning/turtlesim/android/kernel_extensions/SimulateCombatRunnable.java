@@ -1,14 +1,8 @@
 package com.prodning.turtlesim.android.kernel_extensions;
 
-import android.widget.ProgressBar;
-
-import com.prodning.turtlesim.android.activity.MainActivity;
-import com.prodning.turtlesim.kernel.combat.CombatSimulation;
 import com.prodning.turtlesim.kernel.combat.data.FleetCombatUnit;
-import com.prodning.turtlesim.kernel.combat.data.MacroCombatResult;
 import com.prodning.turtlesim.kernel.combat.data.SimulationResult;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,7 +20,7 @@ public class SimulateCombatRunnable implements Runnable {
     public void run() {
         SimulationResult result = new SimulationResult();
 
-//        MainActivity.this.runOnUiThread(new Runnable() {
+//        CombatSimulationMainActivity.this.runOnUiThread(new Runnable() {
 //
 //        });
 

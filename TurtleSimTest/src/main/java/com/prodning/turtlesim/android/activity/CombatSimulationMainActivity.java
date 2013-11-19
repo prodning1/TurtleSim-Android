@@ -1,42 +1,37 @@
 package com.prodning.turtlesim.android.activity;
 
 import android.app.Activity;
-import android.content.Entity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.prodning.turtlesim.kernel.exception.TS_DuplicateIDException;
-import com.prodning.turtlesim.kernel.exception.TS_GenericParseException;
-import com.prodning.turtlesim.kernel.exception.TS_IDNotFoundException;
 import com.prodning.turtlesim.kernel.parse.EntityFileParser;
 import com.prodning.turtlesim.kernel.test.gui.FleetCombatTestGUI;
 import com.prodning.turtlesim.test.android.R;
-
-import org.xml.sax.SAXException;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
-import javax.xml.parsers.ParserConfigurationException;
-
-public class MainActivity extends Activity {
+public class CombatSimulationMainActivity extends Activity {
     public static final String TAG = "TurtleSim-Android_MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_combat_simulation_main);
 
         if (savedInstanceState == null) {
+            //Get file handles for the resource XML files and pass them to the EntityFileParser class
             File fleetFile = resToFile(R.raw.fleets, "fleets.xml");
             File entitiesFile = resToFile(R.raw.entities, "entities.xml");
 
@@ -49,11 +44,20 @@ public class MainActivity extends Activity {
                 resultsTextView.setText(resultString.toCharArray(), 0, resultString.length());
             }
 
+
+            //Initialize fleet picker spinners
             final Spinner attackingFleetSpinner = (Spinner) findViewById(R.id.spinner_attacking_fleet);
             final Spinner defendingFleetSpinner = (Spinner) findViewById(R.id.spinner_defending_fleet);
 
+            ArrayList<String> fleetArrayList = new ArrayList<String>();
+            fleetArrayList.add("ERROR");
+
             try {
-                String[] fleets = (String[]) EntityFileParser.getListOfFleetIds().toArray();
+                fleetArrayList = EntityFileParser.getListOfFleetIds();
+
+                fleetArrayList.add(0,getResources().getString(R.string.select_one));
+
+                String[] fleets = fleetArrayList.toArray(new String[0]);
 
                 ArrayAdapter<String> fleetArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, fleets);
 
@@ -61,10 +65,50 @@ public class MainActivity extends Activity {
                 attackingFleetSpinner.setAdapter(fleetArrayAdapter);
                 defendingFleetSpinner.setAdapter(fleetArrayAdapter);
             } catch (Exception e) {
-                e.printStackTrace();
                 Log.e(TAG, "Error in fleet spinner");
+                Log.e(TAG, e.getMessage());
+                Log.v(TAG, fleetArrayList.toString());
                 System.exit(1);
             }
+
+            //initially set the simulate button to disabled (enable it when 2 valid fleets are selected)
+            final Button simulateButton = (Button) findViewById(R.id.button_simulate);
+
+            simulateButton.setEnabled(false);
+
+            //set spinner listener
+            attackingFleetSpinner.setOnItemSelectedListener(fleetSpinnerListener);
+            defendingFleetSpinner.setOnItemSelectedListener(fleetSpinnerListener);
+        }
+    }
+
+    public AdapterView.OnItemSelectedListener fleetSpinnerListener = new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            checkSimulateButtonEnable();
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> adapterView) {
+            checkSimulateButtonEnable();
+        }
+    };
+
+    private void checkSimulateButtonEnable() {
+        final Spinner attackingFleetSpinner = (Spinner) findViewById(R.id.spinner_attacking_fleet);
+        final Spinner defendingFleetSpinner = (Spinner) findViewById(R.id.spinner_defending_fleet);
+
+        final Button simulateButton = (Button) findViewById(R.id.button_simulate);
+
+        String flt1 = (String) ((Spinner) findViewById(R.id.spinner_attacking_fleet)).getSelectedItem();
+        String flt2 = (String) ((Spinner) findViewById(R.id.spinner_defending_fleet)).getSelectedItem();
+
+        String selectOne = getResources().getString(R.string.select_one);
+
+        if(flt1.equals(selectOne) || flt2.equals(selectOne)) {
+            simulateButton.setEnabled(false);
+        } else {
+            simulateButton.setEnabled(true);
         }
     }
 
