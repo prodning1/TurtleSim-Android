@@ -4,7 +4,7 @@
 	<fleet id="F0001" name="attack" owner="">
 		<entity id="1001" count="100" />
 		<entity id="2001" count="100" />
-		<entity id="2102" count="50" />
+		<entity id="2002" count="50" />
 		<entity id="2003" count="30" />
 		<entity id="2004" count="15" />
         <entity id="0006" count="100" />
