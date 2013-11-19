@@ -1,6 +1,7 @@
 package com.prodning.turtlesim.android.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -143,8 +144,11 @@ public class CombatSimulationMainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
-            case R.id.action_settings:
+            case R.id.action_combat:
                 return true;
+            case R.id.action_trade:
+                Intent intent = new Intent(CombatSimulationMainActivity.this, TradeRatioActivity.class);
+                startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
