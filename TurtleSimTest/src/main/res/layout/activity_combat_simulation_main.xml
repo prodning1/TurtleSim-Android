@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/resultsTextView"
-        android:text="[results will go here]"
+        android:text="This piece is a bit incomplete.  I programmed the entire backend (it simulates the combat between 2 fleets in the game) and got a somewhat working frontend, but there's no ability to actually create your own fleets as that would be 2 more separate activities and I just couldn't finish it all, in part because I spent too much time on the backend :/\n\noh well, it wasn't in my proposal anyway.\n\nIf you want to try it pick 2 prebuilt fleets from the spinners and hit simulate"
         android:focusable="false"
         android:layout_column="0"
         android:layout_columnSpan="2"

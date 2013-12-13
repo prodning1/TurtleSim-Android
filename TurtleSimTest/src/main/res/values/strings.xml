@@ -5,5 +5,8 @@
     <string name="select_one">[select one]</string>
     <string name="action_combat">Simulate Fleet Combat</string>
     <string name="action_trade">Trade Ratios</string>
+    <string name="title_activity_fleet_edit">FleetEditActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

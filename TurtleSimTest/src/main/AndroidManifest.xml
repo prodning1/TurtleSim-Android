@@ -19,11 +19,16 @@
         </activity>
         <activity
             android:name="com.prodning.turtlesim.android.activity.TradeRatioActivity"
-            android:label="TradeRatioActivity">
+            android:label="TradeRatioActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.prodning.turtlesim.android.activity.FlightTimeActivity"
+            android:label="@string/title_activity_fleet_edit" >
         </activity>
     </application>
 

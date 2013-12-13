@@ -32,12 +32,22 @@ public class CombatSimulationMainActivity extends Activity {
         setContentView(R.layout.activity_combat_simulation_main);
 
         if (savedInstanceState == null) {
+            String fleetFileName = "fleets.xml";
+            File fleetFile = new File(fleetFileName);
+
             //Get file handles for the resource XML files and pass them to the EntityFileParser class
-            File fleetFile = resToFile(R.raw.fleets, "fleets.xml");
             File entitiesFile = resToFile(R.raw.entities, "entities.xml");
 
             try {
-                EntityFileParser.setFleetFile(fleetFile);
+//                if(fleetFile.exists()) {
+//                    EntityFileParser.setFleetFile(fleetFile);
+//                    Log.i(TAG, "Using appdata fleetfile");
+//                } else {
+                    File defaultFleetFile = resToFile(R.raw.fleets_default, "fleets_default.xml");
+                    EntityFileParser.setFleetFile(defaultFleetFile);
+                    Log.i(TAG, "Using default fleetfile");
+//                }
+
                 EntityFileParser.setEntitiesFile(entitiesFile);
             } catch (Exception e) {
                 final TextView resultsTextView = (TextView) findViewById(R.id.resultsTextView);
@@ -147,9 +157,15 @@ public class CombatSimulationMainActivity extends Activity {
             case R.id.action_combat:
                 return true;
             case R.id.action_trade:
-                Intent intent = new Intent(CombatSimulationMainActivity.this, TradeRatioActivity.class);
-                startActivity(intent);
+                Intent intent_action_trade = new Intent(CombatSimulationMainActivity.this, TradeRatioActivity.class);
+                startActivity(intent_action_trade);
+                break;
+            case R.id.action_flight_time:
+                Intent intent_action_flight_time = new Intent(CombatSimulationMainActivity.this, FlightTimeActivity.class);
+                startActivity(intent_action_flight_time);
+                break;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

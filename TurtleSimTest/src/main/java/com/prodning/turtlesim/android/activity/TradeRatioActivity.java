@@ -92,8 +92,6 @@ public class TradeRatioActivity extends Activity {
                         Integer.toString(finalCrystal).length());
                 currentDeuteriumEditText.setText(Integer.toString(finalDeuterium).toCharArray(), 0,
                         Integer.toString(finalDeuterium).length());
-
-
             }
         };
 
@@ -124,9 +122,15 @@ public class TradeRatioActivity extends Activity {
             case R.id.action_combat:
                 Intent intent = new Intent(TradeRatioActivity.this, CombatSimulationMainActivity.class);
                 startActivity(intent);
+                break;
             case R.id.action_trade:
                 return true;
+            case R.id.action_flight_time:
+                Intent intent_action_flight_time = new Intent(TradeRatioActivity.this, FlightTimeActivity.class);
+                startActivity(intent_action_flight_time);
+                break;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }

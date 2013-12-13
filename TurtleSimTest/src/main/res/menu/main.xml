@@ -8,4 +8,8 @@
         android:title="@string/action_trade"
         android:orderInCategory="200"
         android:showAsAction="never" />
+    <item android:id="@+id/action_flight_time"
+        android:title="Calculate Flight Times"
+        android:orderInCategory="300"
+        android:showAsAction="never" />
 </menu>
